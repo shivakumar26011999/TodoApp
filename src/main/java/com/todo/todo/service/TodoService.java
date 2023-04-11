@@ -34,7 +34,7 @@ public class TodoService {
         LOGGER.info("TodoService :: deleteProject() :: start");
         if(!projects.contains(projectName)) {
             LOGGER.error("Project not found to delete.");
-            throw new NotFoundException(HttpStatus.NOT_FOUND.value(), "Project not found to delete.");
+            throw new NotFoundException(HttpStatus.NOT_FOUND.value(), "Project "+projectName+" not found to delete.");
         }
         ptmap.remove(projectName);
         projects.remove(projectName);
